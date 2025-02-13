@@ -3,150 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dview.co.in</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('/landing_page_bg.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .container {
-            max-width: 700px;
-            width: 90%;
-            padding: 20px 30px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        .logo {
-            width: 80px;
-            margin: 0 auto 15px;
-        }
-        h1 {
-            font-size: 2.4rem;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-        .description {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .time-box {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: #fff;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            color: #000;
-        }
-        .time-box span {
-            font-size: 0.8rem;
-            font-weight: normal;
-            margin-top: 5px;
-            text-transform: uppercase;
-            color: #000;
-        }
-        .footer {
-            margin-top: 20px;
-        }
-        .footer a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            margin: 0 10px;
-        }
-        .footer a:hover {
-            color: #ddd;
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 30px; /* Increased side padding for mobile */
-            }
-            h1 {
-                font-size: 2rem; /* Adjusted font size for better readability on smaller screens */
-            }
-            .time-box {
-                width: 60px;
-                height: 60px;
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <title>dview.co.in</title>
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fa-regular.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
 </head>
 <body>
-    <div class="container">
-        <img src="/Dview_web_logo_full.png" alt="Logo" class="logo">
-        <p class="description">Welcome to Dview. We are dedicated to transforming your spaces into stunning interiors. Our website is launching soon to inspire and elevate your living spaces.</p>
-        <h1>Launching In:</h1>
-        <div class="timer">
-            <div class="time-box">
-                <div id="days">00</div>
-                <span>Days</span>
-            </div>
-            <div class="time-box">
-                <div id="hours">00</div>
-                <span>Hours</span>
-            </div>
-            <div class="time-box">
-                <div id="minutes">00</div>
-                <span>Minutes</span>
-            </div>
-            <div class="time-box">
-                <div id="seconds">00</div>
-                <span>Seconds</span>
-            </div>
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-btn" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/dview_logo_nobg.png" alt="Logo">
         </div>
-        <div class="footer">
-            <p>Follow us on: 
-                <a href="https://www.instagram.com/dview.co.in/" target="_blank">Instagram</a>  
-            </p>
+
+        <!-- Desktop Menu -->
+        <div class="menu desktop-menu">
+            <ul>
+                <li><a href="#" class="active">Showroom</a></li>
+                <li><a href="projects.html">Project</a></li>
+                <li>
+                    <a href="#" class="services-link">
+                        Services <i class="fas fa-chevron-down"></i>
+                    </a>
+                </li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Right Section (Desktop Only) -->
+        <div class="right-section desktop-only">
+            <a href="mailto:dview.associates@gmail.com" class="fas fa-envelope" aria-label="Email"></a>
+            <a href="tel:+919340924736" class="fas fa-phone" aria-label="Contact"></a>
         </div>
     </div>
 
-    <script>
-        // Countdown Timer Script
-        const countdown = () => {
-            const launchDate = new Date('February 15, 2025 00:00:00').getTime();
-            const now = new Date().getTime();
-            const timeLeft = launchDate - now;
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <nav>
+            <a href="#" class="active">Showroom</a>
+            <a href="projects.html">Project</a>
+            <a href="#">Services</a>
+            <a href="aboutus.html">About</a>
+            <a href="contacts.html">Contact</a>
+            <!-- Contact links for mobile -->
+            <div class="mobile-contact">
+                <a href="mailto:dview.associates@gmail.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:+919340924736">
+                    <i class="fas fa-phone"></i> Call
+                </a>
+            </div>
+        </nav>
+        <!-- Centered Logo -->
+        <div class="mobile-logo-container">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/dview_logo_nobg.png" alt="Logo" class="mobile-logo">
+        </div>
+    </div>
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    <img src="/left_leaf.png" alt="Leaf" class="floating-leaf leaf-left">
+    <img src="/right_leaf.png" alt="Leaf" class="floating-leaf leaf-right">
+    <!-- Main Content Section (Widgets) -->
+   <!-- Main Content Section (Widgets) -->
+   <main class="main-content">
+    <div class="advertisement-container">
+    <!-- Container for Large and Small Widgets -->
+    <div class="ad-column">
+        <div class="ad-widget-large">
+            <!-- Left Widget -->
+            <div class="left-widget">
+                <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/sofa_bg.png" alt="Advertisement Image" class="ad-image">
+            </div>
+            
+            <!-- Right Widget -->
+            <div class="right-widget">
+                <h3 class="ad-heading">Get Your Comfort</h3>
+                <h4 class="ad-subheading">DESIGNED</h4>
+                <p class="ad-desp">Redefine the way you live and work with interiors crafted to perfection where every detail reflects elegance, innovation, and your personality</p>
+                <button class="ad-button">Know More</button>
+            </div>
+        </div>
+        <div class="ad-widget-small">
+            <div class="small-image">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/Dview_web_logo_full.png" alt="Logo" class="ad-logo">
+            </div>
+        <p class="adsense-line">Glow beyond</p>
+        <p class="adsense-title">ORDINARY</p>
+        </div>
+    </div>
 
-            document.getElementById('days').innerText = days;
-            document.getElementById('hours').innerText = hours;
-            document.getElementById('minutes').innerText = minutes;
-            document.getElementById('seconds').innerText = seconds;
 
-            if (timeLeft < 0) {
-                document.querySelector('.timer').innerHTML = '<h2>We are live!</h2>';
-            }
-        };
+    
+    <!-- Container for Medium Widget -->
+    <div class="ad-widget-medium">
+        <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/Dview_web_logo_full.png" alt="Logo" class="ad-logo">
+        <p class="ad-line">FURA</p>
+        <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/fura.png" alt="Advertisement Image" class="ad-image">
+       <div class = "ad-div">
+        <p class="ad-description">With Your Personalized</p>
+        <p class="ad-description-last">ELEGANCE</p>
+        </div>
+        <button class="ad-button-1">Get Started</button>
+    </div>
+</div>
+<div class="project-section">
+    <h1 class="project-title">PROJECTS</h1>
+    <h2 class="award-title">AWARD WINNING <br> PROJECTS</h2>
+    
+    <!-- Container for Image and Overlay Text -->
+   <div class="image-widget-container">
+    <!-- Image Widget -->
+    <div class="image-widget">
+        <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/1.png" alt="Image 1">
+        <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/2.png" alt="Image 2">
+        <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/3.png" alt="Image 3">
+        <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/4.png" alt="Image 4">
+        <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/5.png" alt="Image 5">
+    </div>
+    
 
-        setInterval(countdown, 1000);
-    </script>
+        <!-- Overlay Text Widget -->
+        <div class="text-overlay-widget">
+            <h1>OUR RECENT</h1>
+            <h3>PROJECTS</h3>
+            <p>Explore our latest projects showcasing the perfect fusion of creativity, functionality, and elegance. At our interior design and architecture firm, we are dedicated to transforming spaces into works of art that meet the needs and aspirations of our clients. Whether it's a contemporary home or a sophisticated office space, our team meticulously crafts every detail to perfection.
+<br><br>
+                Our commitment to innovation and quality is evident in each project, where we blend modern trends with timeless design principles. With a focus on sustainability and practicality, we ensure that every space we create is not only visually stunning but also functional and enduring.</p>
+            <button class="project-button">View all Projects</button>
+        </div>
+    </div>
+</div>
+<div class="intro-section">
+    <h1 class="intro-title">INTERIOR DESIGN</h1>
+    <h2 class="craft-title">CRAFTSMANSHIP</h2>
+
+    <!-- New Widget -->
+    <div class="intro-widget">
+        <!-- Image Section -->
+        <div class="widget-image">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/WhatsApp Image 2024-11-29 at 10.31.55.jpeg" alt="Widget Image">
+            <p class="acknowledge-text">FOUNDER & COFOUNDER</p>
+        </div>
+    
+        <!-- Text and Button Section -->
+        <div class="widget-content">
+            <h5>ESTABLISHED 2009</h5>
+            <h3>Transforming Spaces</h3>
+            <p>Our interior designing firm specializes in creating functional and elegant spaces that align with your vision. From building planning to interior optimization, we craft designs for homes, offices, and commercial spaces with a perfect balance of style and practicality. <br><br> We also offer vastu-integrated designs for harmony, turnkey solutions for seamless execution, and expert consultancy to bring your ideas to life. With a commitment to detail and innovation, we ensure every project exudes quality and sophistication. </p>
+            <button class="widget-button">Learn More</button>
+        </div>
+    </div>
+
+    <div class="options-section">
+        <h1 class="options-title">CRAFTING TIMELESS<br>SPACES</h1>
+        <h2 class="choose-title">WHY CHOOSE US</h2>
+    
+        <div class="image-wid-container">
+            <!-- Widget 1 -->
+            <div class="image-wid">
+                <div class="hover-image">
+                    <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/work1.png" alt="Image 1">
+                </div>
+                <div class="widget-body">
+                    <h3 class="widget-title">Building Planning</h3>
+                    <p class="widget-description">We specialize in designing well-structured and aesthetically pleasing architectural plans that maximize space utilization and meet your unique requirements.</p>
+                </div>
+            </div>
+    
+            <!-- Widget 2 -->
+            <div class="image-wid">
+                <div class="hover-image">
+                    <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/work2.png" alt="Image 2">
+                </div>
+                <div class="widget-body">
+                    <h3 class="widget-title">Interior Space</h3>
+                    <p class="widget-description">Transforming interiors into functional, stylish, and personalized spaces that enhance comfort and visual appeal.</p>
+                </div>
+            </div>
+    
+            <!-- Widget 3 -->
+            <div class="image-wid">
+                <div class="hover-image">
+                    <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/work3.png" alt="Image 3">
+                </div>
+                <div class="widget-body">
+                    <h3 class="widget-title">Corporates</h3>
+                    <p class="widget-description">Designing modern, innovative, and ergonomic office environments that foster productivity and reflect your corporate identity.</p>
+                </div>
+            </div>
+    
+            <!-- Widget 4 -->
+            <div class="image-wid">
+                <div class="hover-image">
+                    <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/work4.png" alt="Image 4">
+                </div>
+                <div class="widget-body">
+                    <h3 class="widget-title">Vastu Planning</h3>
+                    <p class="widget-description">Incorporating ancient vastu principles to create balanced, harmonious spaces that promote positive energy and well-being.</p>
+                </div>
+            </div>
+    
+            <!-- Widget 5 -->
+            <div class="image-wid">
+                <div class="hover-image">
+                    <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/work5.png" alt="Image 5">
+                </div>
+                <div class="widget-body">
+                    <h3 class="widget-title">Turn Key Projects</h3>
+                    <p class="widget-description">Offering comprehensive interior solutions, handling every aspect from initial design to final execution for a hassle-free experience.</p>
+                </div>
+            </div>
+    
+            <!-- Widget 6 -->
+            <div class="image-wid">
+                <div class="hover-image">
+                    <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/work6.png" alt="Image 6">
+                </div>
+                <div class="widget-body">
+                    <h3 class="widget-title">Consultancy</h3>
+                    <p class="widget-description">Providing expert insights and tailored advice to help you achieve the perfect blend of functionality and design for your project.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="feedback-section">
+        <h1 class="feedback-title">TESTIMONIALS</h1>
+        <h5 class="feedback-subtitle">TESTIMONIALS</h5>
+        <h6 class="testimonials-title">WHAT OUR CLIENTS SAY</h6>
+    
+        <div class="feedback-widgets">
+            <!-- Left Column with One Widget -->
+            <div class="left-column">
+                <div class="feedback-widget feedback-widget-large">
+                    <!-- Top Bar -->
+                    <div class="feedback-widget-header">
+                        <div class="dots-container">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                    </div>
+    
+                    <!-- Feedback Content -->
+                    <div class="feedback-text">
+                        <p>"The team was fantastic, and the designs were even better than I had imagined!"</p>
+                    </div>
+                    <div class="feedback-provider">
+                        <div class="provider-image">
+                            <img src="/Users/aakashjaiswal/Desktop/salefit/prsn1.png" alt="Client Image">
+                        </div>
+                        <p>Akshat Jain</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Right Column with Two Widgets -->
+            <div class="right-column">
+                <div class="feedback-widget feedback-widget-medium">
+                    <!-- Top Bar -->
+                    <div class="feedback-widget-header">
+                        <div class="dots-container">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                    </div>
+    
+                    <!-- Feedback Content -->
+                    <div class="feedback-text">
+                        <p>"Exceptional service and outstanding creativity in their designs."</p>
+                    </div>
+                    <div class="feedback-provider">
+                        <div class="provider-image">
+                            <img src="/Users/aakashjaiswal/Desktop/salefit/prsn2.png" alt="Client Image">
+                        </div>
+                        <p>Aakash Jaiswal</p>
+                    </div>
+                </div>
+    
+                <div class="feedback-widget feedback-widget-small">
+                    <!-- Top Bar -->
+                    <div class="feedback-widget-header">
+                        <div class="dots-container">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                    </div>
+    
+                    <!-- Feedback Content -->
+                    <div class="feedback-text">
+                        <p>"I highly recommend them for anyone looking for unique and timeless interiors."</p>
+                    </div>
+                    <div class="feedback-provider">
+                        <div class="provider-image">
+                            <img src="/Users/aakashjaiswal/Desktop/salefit/prsn3.png" alt="Client Image">
+                        </div>
+                        <p>Ishan Sharma</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="creds-section">
+        <h1 class="creds-title">CREDENTIALS</h1>
+        <h2 class="cer-title">CERTIFIED BY</h2>
+        <div class="certifications-row">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/manit-bhopal-logo-EBBC17BB48-seeklogo.com.png" alt="Certification 1" class="certification-image">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/coa-logo.jpg-removebg-preview.png" alt="Certification 3" class="certification-image">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/Indian_Institute_of_Architects_Logo.png" alt="Certification 2" class="certification-image">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/IIID-removebg-preview-removebg-preview.png" alt="Certification 5" class="certification-image">
+            <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/PnKN4Bol_400x400-removebg-preview.png" alt="Certification 4" class="certification-image">
+        </div>
+    </div>
+    <!-- Third Widget (New Ad in the Row) -->
+   
+    <!-- Dropdown Sections -->
+
+    <div id="servicesDropdown" class="services-dropdown">
+        <div class="dropdown-content">
+            <div class="dropdown-column">
+                <h3>Design Services</h3>
+                <a href="#">Interior Design</a>
+                <a href="#">Architectural Design</a>
+                <a href="#">Space Planning</a>
+            </div>
+            <div class="dropdown-column">
+                <h3>Consultation</h3>
+                <a href="#">Color Consultation</a>
+                <a href="#">Material Selection</a>
+                <a href="#">Lighting Design</a>
+            </div>
+            <div class="dropdown-column">
+                <h3>Implementation</h3>
+                <a href="#">Project Management</a>
+                <a href="#">Construction</a>
+                <a href="#">Renovation</a>
+            </div>
+        </div>
+    </div>
+   
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <!-- Left Section: Logo and Message -->
+      <div class="footer-left">
+        <img src="/Users/aakashjaiswal/Desktop/dview/UI:UX/Dview_web_logo_full.png" alt="Logo" class="footer-logo">
+        <p>At D View Associates, we craft exceptional architecture and interior designs that blend innovation with elegance.</p>
+      </div>
+
+      <!-- Right Section: Columns -->
+      <div class="footer-right">
+        <!-- Column 1: Our Firm -->
+        <div class="footer-column">
+          <h3>Our Firm</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Get in Touch -->
+        <div class="footer-column">
+          <h3>Get in Touch</h3>
+          <ul>
+            <li><a href="https://www.instagram.com/dview.co.in/">Instagram</a></li>
+            <li><a href="#facebook">Facebook</a></li>
+            <li><a href="#twitter">Twitter</a></li>
+            <li><a href="#linkedin">LinkedIn</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <ul>
+            <li><a href="mailto:dview.associates@gmail.com">dview.associates@gmail.com</a></li>
+            <li>
+                <a href="tel:+919340924736">+919340924736</a>,
+                <a href="tel:+919826084909">+919826084909</a>
+            </li>
+            <li><a href="https://goo.gl/maps/your-map-url">369, Mandakini Society, Kolar Rd, Bhopal, Madhya Pradesh 462042</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-credentials">
+        <div class="footer-credentials-line"></div>
+        <div class="footer-credentials-content">
+          <div class="footer-credentials-left">
+            <p>Copyright &#169; 2024 D View Associates</p>
+          </div>
+          <div class="footer-credentials-right">
+            <p>Website Designed and Developed by</p>
+            <img src="/Users/aakashjaiswal/Desktop/salefit/salefit_full_nobg.png" alt="Logo" class="footer-credentials-logo">
+          </div>
+        </div>
+      </div>
+  </footer>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
